@@ -5,6 +5,7 @@ const projects = [
     description: "Um radar pessoal que cruza preferências, currículo e oportunidades para explicar onde vale concentrar energia.",
     details: ["Next.js", "TypeScript", "APIs", "Análise explicável"],
     accent: "lime",
+    repositoryUrl: "https://github.com/ledumape/signal-job-radar",
   },
   {
     title: "Color Cycle",
@@ -12,6 +13,7 @@ const projects = [
     description: "Mini Program para Zepp OS que conecta o relógio ao Hevy e transforma a rotina de treino em informação acessível no pulso.",
     details: ["Zepp OS", "JavaScript", "Bluetooth", "API Hevy"],
     accent: "orange",
+    repositoryUrl: "https://github.com/ledumape/color-cycle-bip6",
   },
 ];
 
@@ -43,7 +45,7 @@ export default function Home() {
             <div className="project-index">0{index + 1}</div>
             <div className="project-main"><p>{project.label}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="tags">{project.details.map((detail) => <span key={detail}>{detail}</span>)}</div></div>
             <div className="project-art" aria-hidden="true"><span /><b>{project.title.slice(0, 1)}</b><i /></div>
-            <div className="project-footer"><span>Repositório em publicação</span><a href="#contato">Conhecer o projeto <span aria-hidden="true">↗</span></a></div>
+            <div className="project-footer"><span>Repositório público</span><a href={project.repositoryUrl} target="_blank" rel="noreferrer">Conhecer o projeto <span aria-hidden="true">↗</span></a></div>
           </article>)}
         </div>
       </section>

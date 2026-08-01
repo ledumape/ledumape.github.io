@@ -23,4 +23,6 @@ test("server-renders Leonardo's portfolio and both projects", async () => {
   assert.match(html, /Color Cycle/);
   assert.match(html, /Engenharia da Computação/);
   assert.match(html, /github\.com\/ledumape/);
+  assert.match(html, /github\.com\/ledumape\/signal-job-radar/);
+  assert.match(html, /github\.com\/ledumape\/color-cycle-bip6/);
 });
