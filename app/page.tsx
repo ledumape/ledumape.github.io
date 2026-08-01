@@ -52,7 +52,7 @@ export default function Home() {
 
       <section className="about" id="sobre" aria-labelledby="about-title">
         <div className="about-statement"><p className="rule-label">Perfil</p><h2 id="about-title">Tecnologia só faz sentido quando deixa o caminho mais claro.</h2></div>
-        <div className="about-detail"><p>Sou graduando em Engenharia da Computação no CEUB e atuo com tecnologia, análise de dados, automação de processos e suporte. Gosto de entender o problema antes de escolher a ferramenta.</p><p>Minha experiência passa por rotinas institucionais, visualização de dados, integração de APIs e projetos com IA generativa — sempre com atenção ao que é útil, seguro e sustentável.</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">Ver trajetória no LinkedIn <span aria-hidden="true">↗</span></a></div>
+        <div className="about-detail"><p>Sou graduando em Engenharia da Computação no CEUB e atuo com tecnologia, análise de dados, automação de processos e suporte. Gosto de entender o problema antes de escolher a ferramenta.</p><p>Minha experiência passa por rotinas institucionais, visualização de dados, integração de APIs e projetos com IA generativa, sempre com atenção ao que é útil, seguro e sustentável.</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">Ver trajetória no LinkedIn <span aria-hidden="true">↗</span></a></div>
       </section>
 
       <section className="capabilities" aria-labelledby="capabilities-title">
@@ -62,7 +62,7 @@ export default function Home() {
 
       <section className="credentials" aria-labelledby="credentials-title">
         <p className="rule-label">Formação contínua</p><h2 id="credentials-title">Certificações e estudo em andamento.</h2>
-        <div className="credential-grid"><p>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional <span>Oracle</span></p><p>Prompt Engineering for ChatGPT <span>Vanderbilt University / Coursera</span></p><p>Gemini for Developers <span>Google DeepMind / Coursera</span></p><p>Python 3 — Mundo 3 <span>Curso em Vídeo · 40h</span></p></div>
+        <div className="credential-grid"><p>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional <span>Oracle</span></p><p>Prompt Engineering for ChatGPT <span>Vanderbilt University / Coursera</span></p><p>Gemini for Developers <span>Google DeepMind / Coursera</span></p><p>Python 3: Mundo 3 <span>Curso em Vídeo · 40h</span></p></div>
       </section>
 
       <footer id="contato">
