@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:pages": "node scripts/build-github-pages.mjs",
     "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/responsive-layout.test.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/responsive-layout.test.mjs tests/github-pages-export.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern site-package-stage",
     "db:generate": "drizzle-kit generate"
   },
