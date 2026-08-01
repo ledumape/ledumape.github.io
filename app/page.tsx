@@ -8,12 +8,12 @@ const projects = [
     repositoryUrl: "https://github.com/ledumape/signal-job-radar",
   },
   {
-    title: "Color Cycle",
+    title: "bip6tohevy",
     label: "Amazfit Bip 6",
     description: "Mini Program para Zepp OS que conecta o relógio ao Hevy e transforma a rotina de treino em informação acessível no pulso.",
     details: ["Zepp OS", "JavaScript", "Bluetooth", "API Hevy"],
     accent: "orange",
-    repositoryUrl: "https://github.com/ledumape/color-cycle-bip6",
+    repositoryUrl: "https://github.com/ledumape/bip6tohevy",
   },
 ];
 

@@ -20,9 +20,9 @@ test("server-renders Leonardo's portfolio and both projects", async () => {
 
   assert.match(html, /<title>Leonardo Penna/);
   assert.match(html, /Signal/);
-  assert.match(html, /Color Cycle/);
+  assert.match(html, /bip6tohevy/);
   assert.match(html, /Engenharia da Computação/);
   assert.match(html, /github\.com\/ledumape/);
   assert.match(html, /github\.com\/ledumape\/signal-job-radar/);
-  assert.match(html, /github\.com\/ledumape\/color-cycle-bip6/);
+  assert.match(html, /github\.com\/ledumape\/bip6tohevy/);
 });
