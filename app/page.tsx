@@ -1,74 +1,72 @@
-const projects = [
-  {
-    title: "Signal",
-    label: "Agente de vagas",
-    description: "Um radar pessoal que cruza preferências, currículo e oportunidades para explicar onde vale concentrar energia.",
-    details: ["Next.js", "TypeScript", "APIs", "Análise explicável"],
-    accent: "lime",
-    repositoryUrl: "https://github.com/ledumape/signal-job-radar",
-  },
-  {
-    title: "bip6tohevy",
-    label: "Amazfit Bip 6",
-    description: "Mini Program para Zepp OS que conecta o relógio ao Hevy e transforma a rotina de treino em informação acessível no pulso.",
-    details: ["Zepp OS", "JavaScript", "Bluetooth", "API Hevy"],
-    accent: "orange",
-    repositoryUrl: "https://github.com/ledumape/bip6tohevy",
-  },
-];
+"use client";
 
-const skills = ["Python", "SQL", "Power BI", "Power Automate", "FastAPI", "Flask", "APIs", "Git/GitHub", "HTML/CSS", "IA generativa"];
+import { useEffect, useState } from "react";
+
+type Language = "pt" | "en";
+
+const content = {
+  pt: {
+    nav: { work: "Trabalho", about: "Sobre", contact: "Contato", talk: "Vamos conversar" },
+    language: { pt: "Português", en: "English", label: "Idioma do portfólio" },
+    location: "Brasília, DF · disponível para desafios em tecnologia",
+    hero: "Engenharia de Computação, aplicações com IA e produtos digitais que reduzem atrito no trabalho das pessoas.",
+    movement: "em movimento", seeProjects: "ver projetos", workTitle: "Projetos que mostram como eu penso.",
+    workLead: "Da busca por oportunidades à experiência no dispositivo: cada projeto nasce de um problema prático e vira uma ferramenta que alguém pode usar.",
+    repository: "Repositório público", viewProject: "Conhecer o projeto",
+    projects: [
+      { label: "Agente de vagas", title: "Signal", description: "Um radar pessoal que cruza preferências, currículo e oportunidades para explicar onde vale concentrar energia.", details: ["Next.js", "TypeScript", "APIs", "Análise explicável"], accent: "lime", repositoryUrl: "https://github.com/ledumape/signal-job-radar" },
+      { label: "Amazfit Bip 6", title: "bip6tohevy", description: "Mini Program para Zepp OS que conecta o relógio ao Hevy e transforma a rotina de treino em informação acessível no pulso.", details: ["Zepp OS", "JavaScript", "Bluetooth", "API Hevy"], accent: "orange", repositoryUrl: "https://github.com/ledumape/bip6tohevy" },
+    ],
+    profile: "Perfil", aboutTitle: "Tecnologia só faz sentido quando deixa o caminho mais claro.",
+    about: ["Sou Engenheiro de Computação formado pelo CEUB e construo aplicações, integrações e automações. Gosto de entender o problema antes de escolher a ferramenta.", "Minha experiência passa por inovação, análise de dados, suporte técnico, integração de APIs e projetos com IA generativa, sempre com atenção ao que é útil, seguro e sustentável."],
+    linkedin: "Ver trajetória no LinkedIn", capabilitiesLabel: "Ferramentas de trabalho", capabilitiesTitle: "Uma base técnica para explorar, construir e melhorar.",
+    skills: ["Python", "SQL", "Power BI", "Power Automate", "FastAPI", "Flask", "APIs", "Git/GitHub", "HTML/CSS", "IA generativa"],
+    credentialsLabel: "Formação contínua", credentialsTitle: "Certificações e estudo em andamento.",
+    credentials: [["Oracle Cloud Infrastructure 2025 Certified Generative AI Professional", "Oracle"], ["Prompt Engineering for ChatGPT", "Vanderbilt University / Coursera"], ["Gemini for Developers", "Google DeepMind / Coursera"], ["Python 3: Mundo 3", "Curso em Vídeo · 40h"]],
+    next: "Próxima conversa", contactTitle: "Tem uma ideia,\nvaga ou projeto?",
+  },
+  en: {
+    nav: { work: "Work", about: "About", contact: "Contact", talk: "Let's talk" },
+    language: { pt: "Português", en: "English", label: "Portfolio language" },
+    location: "Brasília, Brazil · open to technology opportunities",
+    hero: "Computer Engineering, AI applications, and digital products that reduce friction in people's work.",
+    movement: "in motion", seeProjects: "view projects", workTitle: "Projects that show how I think.",
+    workLead: "From opportunity discovery to an on device experience, each project starts with a practical problem and becomes a tool people can use.",
+    repository: "Public repository", viewProject: "View project",
+    projects: [
+      { label: "Job opportunities agent", title: "Signal", description: "A personal radar that connects preferences, résumé, and opportunities to clarify where to focus energy.", details: ["Next.js", "TypeScript", "APIs", "Explainable analysis"], accent: "lime", repositoryUrl: "https://github.com/ledumape/signal-job-radar" },
+      { label: "Amazfit Bip 6", title: "bip6tohevy", description: "A Zepp OS Mini Program that connects the watch to Hevy and turns workout routines into accessible information on the wrist.", details: ["Zepp OS", "JavaScript", "Bluetooth", "Hevy API"], accent: "orange", repositoryUrl: "https://github.com/ledumape/bip6tohevy" },
+    ],
+    profile: "Profile", aboutTitle: "Technology matters when it makes the path clearer.",
+    about: ["I am a Computer Engineer trained at CEUB, building applications, integrations, and automations. I like to understand the problem before choosing a tool.", "My experience includes innovation, data analysis, technical support, API integration, and generative AI projects, always focused on what is useful, secure, and sustainable."],
+    linkedin: "View my LinkedIn profile", capabilitiesLabel: "Tools I work with", capabilitiesTitle: "A technical foundation to explore, build, and improve.",
+    skills: ["Python", "SQL", "Power BI", "Power Automate", "FastAPI", "Flask", "APIs", "Git/GitHub", "HTML/CSS", "Generative AI"],
+    credentialsLabel: "Continuous learning", credentialsTitle: "Certifications and ongoing study.",
+    credentials: [["Oracle Cloud Infrastructure 2025 Certified Generative AI Professional", "Oracle"], ["Prompt Engineering for ChatGPT", "Vanderbilt University / Coursera"], ["Gemini for Developers", "Google DeepMind / Coursera"], ["Python 3: Level 3", "Curso em Vídeo · 40h"]],
+    next: "Next conversation", contactTitle: "Have an idea,\nan opening, or a project?",
+  },
+} as const;
 
 export default function Home() {
-  return (
-    <main>
-      <nav className="nav" aria-label="Navegação principal">
-        <a className="brand" href="#inicio" aria-label="Ir para o início">LP<span>.</span></a>
-        <div className="nav-links"><a href="#trabalho">Trabalho</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></div>
-        <a className="nav-cta" href="mailto:leonardopenna1@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a>
-      </nav>
+  const [language, setLanguage] = useState<Language>("pt");
+  const t = content[language];
 
-      <section className="hero" id="inicio" aria-labelledby="hero-title">
-        <p className="location">Brasília, DF · disponível para desafios em tecnologia</p>
-        <div className="hero-copy">
-          <h1 id="hero-title">Leonardo<br /><i>Penna</i></h1>
-          <p>Engenharia de Computação, aplicações com IA e produtos digitais que reduzem atrito no trabalho das pessoas.</p>
-        </div>
-        <div className="trajectory" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="pulse" /><span className="trajectory-label">em movimento</span></div>
-        <a className="scroll-cue" href="#trabalho">ver projetos <span>↓</span></a>
-      </section>
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    document.title = language === "pt" ? "Leonardo Penna | Engenharia, automação e produtos digitais" : "Leonardo Penna | Engineering, automation and digital products";
+  }, [language]);
 
-      <section className="work" id="trabalho" aria-labelledby="work-title">
-        <div className="section-heading"><h2 id="work-title">Projetos que mostram como eu penso.</h2><p>Da busca por oportunidades à experiência no dispositivo: cada projeto nasce de um problema prático e vira uma ferramenta que alguém pode usar.</p></div>
-        <div className="project-list">
-          {projects.map((project, index) => <article className={`project project-${project.accent}`} key={project.title}>
-            <div className="project-index">0{index + 1}</div>
-            <div className="project-main"><p>{project.label}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="tags">{project.details.map((detail) => <span key={detail}>{detail}</span>)}</div></div>
-            <div className="project-art" aria-hidden="true"><span /><b>{project.title.slice(0, 1)}</b><i /></div>
-            <div className="project-footer"><span>Repositório público</span><a href={project.repositoryUrl} target="_blank" rel="noreferrer">Conhecer o projeto <span aria-hidden="true">↗</span></a></div>
-          </article>)}
-        </div>
-      </section>
-
-      <section className="about" id="sobre" aria-labelledby="about-title">
-        <div className="about-statement"><p className="rule-label">Perfil</p><h2 id="about-title">Tecnologia só faz sentido quando deixa o caminho mais claro.</h2></div>
-        <div className="about-detail"><p>Sou Engenheiro de Computação formado pelo CEUB e construo aplicações, integrações e automações. Gosto de entender o problema antes de escolher a ferramenta.</p><p>Minha experiência passa por inovação, análise de dados, suporte técnico, integração de APIs e projetos com IA generativa, sempre com atenção ao que é útil, seguro e sustentável.</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">Ver trajetória no LinkedIn <span aria-hidden="true">↗</span></a></div>
-      </section>
-
-      <section className="capabilities" aria-labelledby="capabilities-title">
-        <div><p className="rule-label">Ferramentas de trabalho</p><h2 id="capabilities-title">Uma base técnica para explorar, construir e melhorar.</h2></div>
-        <ul>{skills.map((skill, index) => <li key={skill}><span>{String(index + 1).padStart(2, "0")}</span>{skill}</li>)}</ul>
-      </section>
-
-      <section className="credentials" aria-labelledby="credentials-title">
-        <p className="rule-label">Formação contínua</p><h2 id="credentials-title">Certificações e estudo em andamento.</h2>
-        <div className="credential-grid"><p>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional <span>Oracle</span></p><p>Prompt Engineering for ChatGPT <span>Vanderbilt University / Coursera</span></p><p>Gemini for Developers <span>Google DeepMind / Coursera</span></p><p>Python 3: Mundo 3 <span>Curso em Vídeo · 40h</span></p></div>
-      </section>
-
-      <footer id="contato">
-        <div><p className="rule-label">Próxima conversa</p><h2>Tem uma ideia,<br />vaga ou projeto?</h2><a className="email" href="mailto:leonardopenna1@gmail.com">leonardopenna1@gmail.com <span aria-hidden="true">↗</span></a></div>
-        <div className="footer-links"><a href="https://github.com/ledumape" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">LinkedIn</a><span>© {new Date().getFullYear()} Leonardo Penna</span></div>
-      </footer>
-    </main>
-  );
+  return <main>
+    <nav className="nav" aria-label={language === "pt" ? "Navegação principal" : "Main navigation"}>
+      <a className="brand" href="#inicio" aria-label={language === "pt" ? "Ir para o início" : "Go to top"}>LP<span>.</span></a>
+      <div className="nav-links"><a href="#trabalho">{t.nav.work}</a><a href="#sobre">{t.nav.about}</a><a href="#contato">{t.nav.contact}</a></div>
+      <div className="nav-actions"><div className="language-switcher" aria-label={t.language.label}><button type="button" aria-pressed={language === "pt"} onClick={() => setLanguage("pt")}>{t.language.pt}</button><span aria-hidden="true">/</span><button type="button" aria-pressed={language === "en"} onClick={() => setLanguage("en")}>{t.language.en}</button></div><a className="nav-cta" href="mailto:leonardopenna1@gmail.com">{t.nav.talk} <span aria-hidden="true">↗</span></a></div>
+    </nav>
+    <section className="hero" id="inicio" aria-labelledby="hero-title"><p className="location">{t.location}</p><div className="hero-copy"><h1 id="hero-title">Leonardo<br /><i>Penna</i></h1><p>{t.hero}</p></div><div className="trajectory" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="pulse" /><span className="trajectory-label">{t.movement}</span></div><a className="scroll-cue" href="#trabalho">{t.seeProjects} <span>↓</span></a></section>
+    <section className="work" id="trabalho" aria-labelledby="work-title"><div className="section-heading"><h2 id="work-title">{t.workTitle}</h2><p>{t.workLead}</p></div><div className="project-list">{t.projects.map((project, index) => <article className={`project project-${project.accent}`} key={project.title}><div className="project-index">0{index + 1}</div><div className="project-main"><p>{project.label}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="tags">{project.details.map((detail) => <span key={detail}>{detail}</span>)}</div></div><div className="project-art" aria-hidden="true"><span /><b>{project.title.slice(0, 1)}</b><i /></div><div className="project-footer"><span>{t.repository}</span><a href={project.repositoryUrl} target="_blank" rel="noreferrer">{t.viewProject} <span aria-hidden="true">↗</span></a></div></article>)}</div></section>
+    <section className="about" id="sobre" aria-labelledby="about-title"><div className="about-statement"><p className="rule-label">{t.profile}</p><h2 id="about-title">{t.aboutTitle}</h2></div><div className="about-detail"><p>{t.about[0]}</p><p>{t.about[1]}</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">{t.linkedin} <span aria-hidden="true">↗</span></a></div></section>
+    <section className="capabilities" aria-labelledby="capabilities-title"><div><p className="rule-label">{t.capabilitiesLabel}</p><h2 id="capabilities-title">{t.capabilitiesTitle}</h2></div><ul>{t.skills.map((skill, index) => <li key={skill}><span>{String(index + 1).padStart(2, "0")}</span>{skill}</li>)}</ul></section>
+    <section className="credentials" aria-labelledby="credentials-title"><p className="rule-label">{t.credentialsLabel}</p><h2 id="credentials-title">{t.credentialsTitle}</h2><div className="credential-grid">{t.credentials.map(([name, source]) => <p key={name}>{name} <span>{source}</span></p>)}</div></section>
+    <footer id="contato"><div><p className="rule-label">{t.next}</p><h2>{t.contactTitle.split("\n").map((line, index) => <span key={line}>{index > 0 && <br />}{line}</span>)}</h2><a className="email" href="mailto:leonardopenna1@gmail.com">leonardopenna1@gmail.com <span aria-hidden="true">↗</span></a></div><div className="footer-links"><a href="https://github.com/ledumape" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">LinkedIn</a><span>© {new Date().getFullYear()} Leonardo Penna</span></div></footer>
+  </main>;
 }
