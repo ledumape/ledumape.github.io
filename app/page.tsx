@@ -32,7 +32,7 @@ export default function Home() {
         <p className="location">Brasília, DF · disponível para desafios em tecnologia</p>
         <div className="hero-copy">
           <h1 id="hero-title">Leonardo<br /><i>Penna</i></h1>
-          <p>Engenharia da Computação, automação e produtos digitais que reduzem atrito no trabalho das pessoas.</p>
+          <p>Engenharia de Computação, aplicações com IA e produtos digitais que reduzem atrito no trabalho das pessoas.</p>
         </div>
         <div className="trajectory" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="pulse" /><span className="trajectory-label">em movimento</span></div>
         <a className="scroll-cue" href="#trabalho">ver projetos <span>↓</span></a>
@@ -52,7 +52,7 @@ export default function Home() {
 
       <section className="about" id="sobre" aria-labelledby="about-title">
         <div className="about-statement"><p className="rule-label">Perfil</p><h2 id="about-title">Tecnologia só faz sentido quando deixa o caminho mais claro.</h2></div>
-        <div className="about-detail"><p>Sou graduando em Engenharia da Computação no CEUB e atuo com tecnologia, análise de dados, automação de processos e suporte. Gosto de entender o problema antes de escolher a ferramenta.</p><p>Minha experiência passa por rotinas institucionais, visualização de dados, integração de APIs e projetos com IA generativa, sempre com atenção ao que é útil, seguro e sustentável.</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">Ver trajetória no LinkedIn <span aria-hidden="true">↗</span></a></div>
+        <div className="about-detail"><p>Sou Engenheiro de Computação formado pelo CEUB e construo aplicações, integrações e automações. Gosto de entender o problema antes de escolher a ferramenta.</p><p>Minha experiência passa por inovação, análise de dados, suporte técnico, integração de APIs e projetos com IA generativa, sempre com atenção ao que é útil, seguro e sustentável.</p><a href="https://www.linkedin.com/in/leonardodmp" target="_blank" rel="noreferrer">Ver trajetória no LinkedIn <span aria-hidden="true">↗</span></a></div>
       </section>
 
       <section className="capabilities" aria-labelledby="capabilities-title">

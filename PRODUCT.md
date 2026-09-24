@@ -32,7 +32,7 @@ Reference: Sarah Aliriel's portfolio as inspiration for project-led exploration,
 
 ## Evidence on Hand
 
-Résumé: Leonardo Penna, Engineering student at CEUB; experience at CLDF and Embrapa Café; confirmed projects Signal and bip6tohevy. Public repository links are available from the project cards.
+Résumé: Leonardo Penna, Computer Engineer graduated from CEUB; experience at CLDF and Embrapa Café; confirmed projects Signal and bip6tohevy. Public repository links are available from the project cards.
 
 ## Product Principles
 
