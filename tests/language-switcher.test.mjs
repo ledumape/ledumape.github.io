@@ -11,4 +11,10 @@ test("portfolio includes accessible Portuguese and English language controls", a
   assert.match(page, /useState/);
   assert.match(page, /Leonardo Penna/);
   assert.match(page, /Computer Engineering/);
+  assert.match(page, /AI Product Engineering/);
+  assert.match(page, /Engenharia de Produto com IA/);
+  assert.match(page, /Live Demo/);
+  assert.match(page, /Demo ao vivo/);
+  assert.match(page, /Source Code/);
+  assert.match(page, /Código-fonte/);
 });

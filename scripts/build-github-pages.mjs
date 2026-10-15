@@ -1,11 +1,8 @@
 import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
 
-const vinextCommand = process.platform === "win32"
-  ? "node_modules/.bin/vinext.cmd"
-  : "node_modules/.bin/vinext";
-const result = spawnSync(vinextCommand, ["build"], {
+const result = spawnSync(process.execPath, [resolve("node_modules/vinext/dist/cli.js"), "build"], {
   stdio: "inherit",
-  shell: process.platform === "win32",
   env: { ...process.env, GITHUB_PAGES_BUILD: "true" },
 });
 

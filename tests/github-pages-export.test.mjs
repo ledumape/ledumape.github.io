@@ -12,8 +12,8 @@ test("portfolio declares a static GitHub Pages build", async () => {
   assert.match(config, /output:\s*"export"/);
   assert.equal(packageJson.scripts["build:pages"], "node scripts/build-github-pages.mjs");
   assert.match(buildScript, /GITHUB_PAGES_BUILD:\s*"true"/);
-  assert.match(buildScript, /vinextCommand/);
-  assert.match(buildScript, /shell: process\.platform === "win32"/);
+  assert.match(buildScript, /spawnSync\(process\.execPath/);
+  assert.match(buildScript, /resolve\("node_modules\/vinext\/dist\/cli\.js"\)/);
   assert.match(viteConfig, /isGitHubPagesBuild/);
   assert.match(viteConfig, /isGitHubPagesBuild \? \[vinext\(\)\]/);
 

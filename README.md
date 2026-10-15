@@ -8,6 +8,15 @@ Portfólio profissional de Leonardo Penna, Engenheiro de Computação com foco e
 
 ## Projetos apresentados
 
+### Prompt2Project
+
+Copiloto de planejamento de software com IA que transforma ideias vagas em especificações estruturadas e prontas para agentes de código.
+
+- Demo: [prompt2project.vercel.app](https://prompt2project.vercel.app)
+- Código-fonte: [github.com/ledumape/prompt2project](https://github.com/ledumape/prompt2project)
+- Stack: Next.js, TypeScript, OpenRouter, Zod, Upstash Redis e Vercel.
+- Destaques: discovery adaptativa, geração estruturada, validação semântica e limite de uso por IP.
+
 ### Signal
 
 Radar pessoal de vagas com análise explicável, leitura de currículo e arquitetura preparada para fontes reais.
