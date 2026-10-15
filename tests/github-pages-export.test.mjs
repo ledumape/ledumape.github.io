@@ -22,3 +22,10 @@ test("portfolio declares a static GitHub Pages build", async () => {
   assert.match(workflow, /actions\/deploy-pages/);
   assert.match(workflow, /path:\s*\.\/dist\/client/);
 });
+
+test("portfolio preview uses a native image compatible with the Vinext runtime", async () => {
+  const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+
+  assert.doesNotMatch(page, /from ["']next\/image["']/);
+  assert.match(page, /<img src=\{project\.previewImage\}/);
+});
