@@ -30,7 +30,7 @@ test("server-renders Leonardo's portfolio and both projects", async () => {
   assert.match(html, /github\.com\/ledumape\/prompt2project/);
   assert.match(html, /projects\/prompt2project\/01-new-idea\.png/);
   assert.match(html, /projects\/signal\/cover\.png/);
-  assert.match(html, /projects\/bip6tohevy\/cover\.png/);
+  assert.doesNotMatch(html, /projects\/bip6tohevy\/cover\.png/);
   assert.match(html, /Captura real da tela inicial do Signal/);
-  assert.match(html, /Imagem conceitual do bip6tohevy/);
+  assert.doesNotMatch(html, /Imagem conceitual do bip6tohevy/);
 });
