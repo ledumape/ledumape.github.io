@@ -10,7 +10,7 @@ const content = {
     nav: { work: "Trabalho", about: "Sobre", contact: "Contato", talk: "Vamos conversar" },
     language: { pt: "Português", en: "English", label: "Idioma do portfólio" },
     location: "Brasília, DF · disponível para desafios em tecnologia",
-    hero: "Engenharia de Computação, aplicações com IA e produtos digitais que reduzem atrito no trabalho das pessoas.",
+    hero: "AI Engineer Júnior | Engenharia de Software e Inteligência Artificial Generativa\nDesenvolvo aplicações com IA, LLMs e APIs para transformar problemas reais em soluções funcionais.",
     movement: "em movimento", seeProjects: "ver projetos", workTitle: "Projetos que mostram como eu penso.",
     workLead: "Da busca por oportunidades à experiência no dispositivo: cada projeto nasce de um problema prático e vira uma ferramenta que alguém pode usar.",
     repository: "Repositório público", viewProject: "Conhecer o projeto", liveDemo: "Demo ao vivo", sourceCode: "Código-fonte",
@@ -31,7 +31,7 @@ const content = {
     nav: { work: "Work", about: "About", contact: "Contact", talk: "Let's talk" },
     language: { pt: "Português", en: "English", label: "Portfolio language" },
     location: "Brasília, Brazil · open to technology opportunities",
-    hero: "Computer Engineering, AI applications, and digital products that reduce friction in people's work.",
+    hero: "Junior AI Engineer | Software Engineering and Generative AI\nI build AI applications, LLM integrations, and APIs that turn real problems into functional solutions.",
     movement: "in motion", seeProjects: "view projects", workTitle: "Projects that show how I think.",
     workLead: "From opportunity discovery to an on device experience, each project starts with a practical problem and becomes a tool people can use.",
     repository: "Public repository", viewProject: "View project", liveDemo: "Live Demo", sourceCode: "Source Code",
@@ -65,7 +65,7 @@ export default function Home() {
       <div className="nav-links"><a href="#trabalho">{t.nav.work}</a><a href="#sobre">{t.nav.about}</a><a href="#contato">{t.nav.contact}</a></div>
       <div className="nav-actions"><div className="language-switcher" aria-label={t.language.label}><button type="button" aria-pressed={language === "pt"} onClick={() => setLanguage("pt")}>{t.language.pt}</button><span aria-hidden="true">/</span><button type="button" aria-pressed={language === "en"} onClick={() => setLanguage("en")}>{t.language.en}</button></div><a className="nav-cta" href="mailto:leonardopenna1@gmail.com">{t.nav.talk} <span aria-hidden="true">↗</span></a></div>
     </nav>
-    <section className="hero" id="inicio" aria-labelledby="hero-title"><p className="location">{t.location}</p><div className="hero-copy"><h1 id="hero-title">Leonardo<br /><i>Penna</i></h1><p>{t.hero}</p></div><div className="trajectory" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="pulse" /><span className="trajectory-label">{t.movement}</span></div><a className="scroll-cue" href="#trabalho">{t.seeProjects} <span>↓</span></a></section>
+    <section className="hero" id="inicio" aria-labelledby="hero-title"><p className="location">{t.location}</p><div className="hero-copy"><h1 id="hero-title">Leonardo<br /><i>Penna</i></h1><p>{t.hero.split("\n").map((line, index) => <span className={index === 0 ? "hero-role" : "hero-summary"} key={line}>{line}</span>)}</p></div><div className="trajectory" aria-hidden="true"><span className="orbit orbit-one" /><span className="orbit orbit-two" /><span className="pulse" /><span className="trajectory-label">{t.movement}</span></div><a className="scroll-cue" href="#trabalho">{t.seeProjects} <span>↓</span></a></section>
     <section className="work" id="trabalho" aria-labelledby="work-title"><div className="section-heading"><h2 id="work-title">{t.workTitle}</h2><p>{t.workLead}</p></div><div className="project-list">{t.projects.map((project, index) => <article className={`project project-${project.accent}`} key={project.title}><div className="project-index">0{index + 1}</div><div className="project-main"><p>{project.label}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p>{project.highlights.length > 0 && <p className="project-highlights">{project.highlights.join(" · ")}</p>}<div className="tags">{project.details.map((detail) => <span key={detail}>{detail}</span>)}</div></div><div className={`project-art${project.previewImage ? " project-art-preview" : ""}`} aria-hidden={project.previewImage ? undefined : "true"}>{project.previewImage ? (
   // eslint-disable-next-line @next/next/no-img-element
   <img src={project.previewImage} width={1035} height={900} loading="lazy" alt={project.imageAlt} />

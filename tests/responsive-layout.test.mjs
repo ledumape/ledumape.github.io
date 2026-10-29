@@ -11,6 +11,8 @@ test("mobile layout keeps navigation and project actions reachable", async () =>
   assert.match(mobileRules, /\.language-switcher button\{min-height:44px/);
   assert.match(mobileRules, /\.project\{grid-template-columns:1fr/);
   assert.match(mobileRules, /\.project-footer\{[\s\S]*flex-direction:column/);
+  assert.match(css, /\.hero-role\{display:block/);
+  assert.match(css, /\.hero-summary\{display:block/);
   assert.match(css, /safe-area-inset-bottom/);
   assert.match(layout, /viewportFit:\s*"cover"/);
 });
